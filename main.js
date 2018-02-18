@@ -1,9 +1,8 @@
-game.startGame();
 var inquirer = require("inquirer");
 //npm chalk to color alerts
 var chalk = require("chalk");
 var Word = require("./Word");
-var choices = require("./choices");
+var choices = require("./game");
 
 //Initialize the Game function to display in node 
 var game = new Game();
@@ -43,7 +42,7 @@ function Game() {
 
                 //If the user guessed all letters of the current word corrently, reset guessesRemaining to 10 and get the next word
             } else if (user.currentWord.guessedCorrectly()) {
-                console.log("Cool you're right! Try the next word!");
+                console.log("Congrats on getting the word correct! Try the next word!");
                 user.guessesRemaining = 10;
                 user.nextWord();
             } else {
